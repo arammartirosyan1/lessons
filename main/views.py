@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Languages
+from .models import Languages, Types
 
 
 def index(request):
@@ -10,3 +10,9 @@ def index(request):
 def language(request, language_id):
     name = get_object_or_404(Languages, pk=language_id)
     return render(request, 'language.html', {'name': name})
+
+
+def detail(request, detail_id):
+    posts = Types.objects.get(pk=detail_id)
+    return render(request, 'detail.html', {'posts': posts})
+

@@ -16,5 +16,5 @@ class Types(models.Model):
     description = models.TextField()
 
     def __str__(self):
-        return self.name
+        return f"{self.language} _ {self.name}"
 

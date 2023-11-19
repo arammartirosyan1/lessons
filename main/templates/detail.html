@@ -1,13 +1,14 @@
 {% extends 'layout.html' %}
 
 {% block title %}
-Home
+{{ posts.language }}
 {% endblock %}
 
 {% block body %}
 <div class="container">
-{% for p in posts %}
-<h2><a href="{% url 'language' p.id %}">{{p.language_name}}</a></h2>
-{% endfor %}
+<h1>{{ posts.name }}</h1>
+<h2>{{ posts.title }}</h2>
+<p>{{ posts.description}}</p>
+
             </div>
 {% endblock %}
